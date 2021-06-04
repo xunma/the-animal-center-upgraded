@@ -1,0 +1,10 @@
+<%= simple_form_for(animal) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :sex, collection: ["male", "female", "others"] %>
+  <%= f.input :species, collection: Animal.available_species %>
+  <span>Adopted</span>
+  <%= f.check_box :adopted %>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

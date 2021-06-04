@@ -1,0 +1,9 @@
+<h1><%= @animal.name %> received...</h1>
+
+<ul>
+  <% @donations.each do |donation| %>
+    <li><%=donation.description%></li>
+    <%= link_to "remove donation", donation_path(donation), method: :delete, data: { confirm: "Are you sure?" }  %>
+  <% end %>
+
+</ul>

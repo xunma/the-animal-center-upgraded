@@ -1,0 +1,25 @@
+<h1><%= @animal.name.capitalize %></h1>
+
+<p><%= @animal.species%> |
+  <% if @animal.sex == "female" %>
+    👧
+  <% elsif @animal.sex == "male" %>
+    👱‍♂️
+  <% else %>
+    🧛‍♂️
+  <% end %>
+</p>
+
+<%= link_to "delete #{@animal.name}☹️", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?"} %>
+
+<h3><%= @animal.name.capitalize %> received...</h3>
+
+<ul>
+  <% @animal.donations.first(3).each do |donation| %>
+    <li><%= donation.description %></li>
+  <% end %>
+
+</ul>
+
+<%= link_to "Check its donation👉", animal_donations_path(@animal) %><br>
+<%= link_to "Donate🙏", new_animal_donation_path(@animal) %>

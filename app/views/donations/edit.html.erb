@@ -1,0 +1,6 @@
+<h1>Edit the donation made to <%= @donation.animal.name %>✨</h1>
+<%= simple_form_for(@donation) do |f| %>
+  <%= f.input :description %>
+    <%= f.submit %>
+  </div>
+<% end %>
